@@ -47,6 +47,11 @@ a {
     font-size: 1.5rem;
 }
 
+/* NOVO: Esconde o botão hamburger no desktop */
+.menu-toggle {
+    display: none;
+}
+
 .menu {
     list-style: none;
     display: flex;
@@ -119,7 +124,7 @@ a {
     background-color: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
 }
@@ -197,7 +202,7 @@ footer.footer {
     padding: 3rem 1rem;
     text-align: center;
     border-radius: 0 0 15px 15px;
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-header h1 {
@@ -237,7 +242,7 @@ footer.footer {
     text-align: center;
 }
 
-/* Cards dos membros (você e Wellington) */
+/* Cards dos membros */
 .time-cards {
     display: flex;
     gap: 2rem;
@@ -247,7 +252,7 @@ footer.footer {
 
 .time-membro {
     background: white;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     width: 260px;
     padding: 1.5rem 1rem;
@@ -285,7 +290,7 @@ footer.footer {
     background: #e0f2f1;
     padding: 2rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-objetivos h2 {
@@ -311,19 +316,38 @@ footer.footer {
    Responsividade
    ==================== */
 @media (max-width: 768px) {
-    /* NOVO: Ajusta o cabeçalho para dispositivos móveis */
+    /* Novo: O menu e o logo devem ser flexíveis para permitir o botão hamburger */
     .nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    /* NOVO: Ajusta o menu de navegação */
-    .menu {
-        flex-direction: column;
-        width: 100%; 
-        gap: 0.5rem;
+        flex-wrap: wrap; 
+        align-items: center;
     }
     
+    /* Novo: Mostra o botão hamburger e o estiliza */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* NOVO: Esconde o menu por padrão no celular */
+    .menu {
+        display: none; 
+        flex-direction: column; 
+        width: 100%; /* Ocupa a largura total para aparecer abaixo do logo e botão */
+        gap: 0.5rem;
+        order: 1; /* Garante que o menu ativo apareça abaixo do logo e botão */
+    }
+    
+    /* NOVO: Mostra o menu quando a classe 'active' é adicionada via JS */
+    .menu.active {
+        display: flex;
+    }
+
+    /* Restante dos estilos de responsividade */
     .menu li {
         width: 100%;
         text-align: center;
@@ -334,7 +358,6 @@ footer.footer {
         padding: 0.75rem; 
     }
     
-    /* Regras existentes para empilhar features e time cards */
     .features {
         flex-direction: column;
         align-items: center;
