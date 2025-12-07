@@ -139,7 +139,7 @@ a {
 }
 
 /* ====================
-   Cursos
+   Cursos (Estilos básicos)
    ==================== */
 .curso {
     margin-bottom: 3rem;
@@ -311,6 +311,30 @@ footer.footer {
    Responsividade
    ==================== */
 @media (max-width: 768px) {
+    /* NOVO: Ajusta o cabeçalho para dispositivos móveis */
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* NOVO: Ajusta o menu de navegação */
+    .menu {
+        flex-direction: column;
+        width: 100%; 
+        gap: 0.5rem;
+    }
+    
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu li a {
+        display: block; 
+        padding: 0.75rem; 
+    }
+    
+    /* Regras existentes para empilhar features e time cards */
     .features {
         flex-direction: column;
         align-items: center;
