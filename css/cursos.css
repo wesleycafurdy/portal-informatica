@@ -22,6 +22,7 @@ a {
 .header {
   background-color: #005f73;
   padding: 1rem 2rem;
+  /* position: static; - Não é necessário adicionar aqui, pois não estava fixo. */
 }
 
 .nav {
@@ -38,7 +39,6 @@ a {
   font-size: 1.5rem;
 }
 
-/* NOVO: Remove a regra do menu-toggle (sem JS) */
 .menu-toggle {
     display: none;
 }
@@ -146,13 +146,13 @@ a {
    Responsividade
    ==================== */
 @media (max-width: 768px) {
-    /* NOVO: Permite que o logo e o menu se quebrem em linhas diferentes */
+    /* Permite que o logo e o menu se quebrem em linhas diferentes */
     .nav {
         flex-wrap: wrap; 
         align-items: center;
     }
 
-    /* NOVO: Garante que o menu ocupe toda a largura (100%) quando a tela for pequena */
+    /* Garante que o menu ocupe toda a largura (100%) quando a tela for pequena */
     .menu {
         flex-direction: column; 
         width: 100%; 
@@ -160,11 +160,11 @@ a {
         padding-top: 10px;
     }
     
-    /* NOVO: Faz cada item do menu ocupar a largura toda, como um botão */
+    /* Faz cada item do menu ocupar a largura toda, como um botão */
     .menu li {
         width: 100%;
         text-align: center;
-        margin-bottom: 5px; /* Espaçamento entre os links empilhados */
+        margin-bottom: 5px; 
     }
     
     .menu li a {
