@@ -1,100 +1,204 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portal de Informática - Cursos</title>
-  <link rel="stylesheet" href="css/cursos.css" />
-</head>
-<body>
-  <header class="header">
-    <nav class="nav">
-      <a href="index.html" class="logo">Portal Informática</a>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="cursos.html" class="active">Cursos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <section class="hero">
-    <h1>Cursos de Informática</h1>
-    <p>Escolha abaixo entre cursos básicos, intermediários ou avançados para aprimorar suas habilidades digitais.</p>
-  </section>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  <main class="content">
-    <div class="tabs">
-      <button class="tab-button active" onclick="showTab('basico')">Básico</button>
-      <button class="tab-button" onclick="showTab('intermediario')">Intermediário</button>
-      <button class="tab-button" onclick="showTab('avancado')">Avançado</button>
-    </div>
+a {
+  text-decoration: none;
+  color: #0a9396;
+}
 
-    <div id="basico" class="tab-content active">
-      <ul class="course-list">
-        <li><a href="https://www.ev.org.br/cursos/introducao-a-informatica-basica" target="_blank">Introdução à Informática Básica</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-basico" target="_blank">Microsoft Excel 2016 - Básico</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-basico" target="_blank">Microsoft Word 2016 - Básico</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-basico" target="_blank">Microsoft PowerPoint 2016 - Básico</a></li>
-        <li><a href="https://www.ev.org.br/cursos/internet-basica" target="_blank">Internet Básica</a></li>
-      </ul>
-    </div>
+.header {
+  background-color: #005f73;
+  padding: 1rem 2rem;
+}
 
-    <div id="intermediario" class="tab-content">
-      <ul class="course-list">
-        <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-intermediario" target="_blank">Microsoft Excel 2016 - Intermediário</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-intermediario" target="_blank">Microsoft Word 2016 - Intermediário</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-intermediario" target="_blank">Microsoft PowerPoint 2016 - Intermediário</a></li>
-        <li><a href="https://www.ev.org.br/cursos/introducao-ao-power-bi" target="_blank">Introdução ao Power BI</a></li>
-        <li><a href="https://www.ev.org.br/cursos/modelando-dados-no-power-bi" target="_blank">Modelando Dados no Power BI</a></li>
-      </ul>
-    </div>
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    <div id="avancado" class="tab-content">
-      <ul class="course-list">
-        <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-avancado" target="_blank">Microsoft Excel 2016 - Avançado</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-avancado" target="_blank">Microsoft Word 2016 - Avançado</a></li>
-        <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-avancado" target="_blank">Microsoft PowerPoint 2016 - Avançado</a></li>
-        <li><a href="https://www.ev.org.br/cursos/visualizando-dados-no-power-bi" target="_blank">Visualizando Dados no Power BI</a></li>
-        <li><a href="https://www.ev.org.br/cursos/analise-de-dados-no-power-bi" target="_blank">Análise de Dados no Power BI</a></li>
-      </ul>
-    </div>
-  </main>
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
-  <button id="mobile-menu-fab" aria-label="Mostrar Menu">☰</button>
+.menu-toggle {
+    display: none;
+}
 
-  <footer class="footer">
-    <p>&copy; 2025 Portal Informática. Todos os direitos reservados.</p>
-  </footer>
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
 
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      document.getElementById(tabId).classList.add('active');
+.menu li a {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      event.currentTarget.classList.add('active');
+.menu li a:hover,
+.menu li a.active {
+  background-color: #0a9396;
+}
+
+/* ====================
+   Estilos do Botão Flutuante (FAB)
+   ==================== */
+#mobile-menu-fab {
+    display: none; /* Esconde em desktop */
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    z-index: 1000; 
+    background-color: #0a9396; 
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#mobile-menu-fab:hover {
+    background-color: #005f73;
+}
+
+
+.hero {
+  background-color: #94d2bd;
+  color: #053742;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tab-button {
+  background-color: #0a9396;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background-color: #005f73;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.course-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-list li {
+  margin-bottom: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-list li a {
+  font-weight: 600;
+  display: block;
+}
+
+.footer {
+  background-color: #005f73;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* ====================
+   Responsividade (Regras Mobile)
+   ==================== */
+@media (max-width: 768px) {
+    /* Mostra o botão FAB apenas em telas menores (Mobile) */
+    #mobile-menu-fab {
+        display: block; 
     }
-    
-    // Script JavaScript para fazer o FAB rolar a página para o topo
-    document.addEventListener('DOMContentLoaded', function() {
-        const fabButton = document.getElementById('mobile-menu-fab');
-        
-        if (fabButton) {
-            fabButton.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' 
-                });
-            });
-        }
-    });
 
-  </script>
-</body>
-</html>
+    .nav {
+        flex-wrap: wrap; 
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column; 
+        width: 100%; 
+        gap: 0; 
+        padding-top: 10px;
+    }
+    .menu li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px; 
+    }
+    .menu li a {
+        display: block; 
+        padding: 0.75rem; 
+    }
+    .tabs {
+        flex-direction: column;
+    }
+    .tab-button {
+        width: 100%;
+    }
+}
