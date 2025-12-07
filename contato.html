@@ -8,29 +8,21 @@
     <link rel="stylesheet" href="css/style.css" /> 
     
     <style>
-        /* Centraliza o texto do HERO (o título "Fale Conosco") */
+        /* CSS EMBUTIDO PARA CENTRALIZAÇÃO DO FORMULÁRIO */
         .hero {
             text-align: center;
             padding: 60px 20px; 
         }
-
-        /* Centraliza o bloco do formulário na horizontal */
         .form-section form {
-            /* Define uma largura máxima para que a centralização seja visível */
             max-width: 600px; 
-            /* Centraliza o bloco na horizontal */
             margin: 40px auto; 
             padding: 20px;
         }
-
-        /* Garante que labels ocupem a linha e ajusta o espaçamento */
         .form-section label {
             display: block;
             margin-top: 15px;
             font-weight: bold;
         }
-        
-        /* Ajusta os campos para ocuparem a largura total do formulário */
         .form-section input[type="text"],
         .form-section input[type="email"],
         .form-section textarea {
@@ -41,8 +33,6 @@
             box-sizing: border-box; 
             display: block; 
         }
-        
-        /* Ajusta o botão */
         .form-section .btn {
             display: block;
             width: 100%; 
@@ -58,7 +48,8 @@
     <header class="header">
         <nav class="nav">
             <a href="index.html" class="logo">Portal Informática</a>
-            <ul class="menu">
+            <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button> 
+            <ul class="menu" id="main-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
@@ -94,5 +85,18 @@
     <footer class="footer">
         <p>© 2025 Portal de Informática - Projeto Comunitário</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.menu');
+
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
