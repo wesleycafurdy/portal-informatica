@@ -38,6 +38,11 @@ a {
   font-size: 1.5rem;
 }
 
+/* NOVO: Esconde o botão hamburger no desktop */
+.menu-toggle {
+    display: none;
+}
+
 .menu {
   list-style: none;
   display: flex;
@@ -121,7 +126,7 @@ a {
   background-color: white;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .course-list li a {
@@ -141,19 +146,38 @@ a {
    Responsividade
    ==================== */
 @media (max-width: 768px) {
-    /* NOVO: Ajusta o cabeçalho para dispositivos móveis */
+    /* Novo: O menu e o logo devem ser flexíveis para permitir o botão hamburger */
     .nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    /* NOVO: Ajusta o menu de navegação */
-    .menu {
-        flex-direction: column; 
-        width: 100%; 
-        gap: 0.5rem; 
+        flex-wrap: wrap; 
+        align-items: center;
     }
     
+    /* Novo: Mostra o botão hamburger e o estiliza */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* NOVO: Esconde o menu por padrão no celular */
+    .menu {
+        display: none; 
+        flex-direction: column; 
+        width: 100%; /* Ocupa a largura total para aparecer abaixo do logo e botão */
+        gap: 0.5rem;
+        order: 1; 
+    }
+    
+    /* NOVO: Mostra o menu quando a classe 'active' é adicionada via JS */
+    .menu.active {
+        display: flex;
+    }
+    
+    /* Restante dos estilos de responsividade */
     .menu li {
         width: 100%;
         text-align: center;
@@ -164,7 +188,7 @@ a {
         padding: 0.75rem; 
     }
     
-    /* NOVO: Faz os botões de aba se empilharem */
+    /* Faz os botões de aba se empilharem */
     .tabs {
         flex-direction: column;
     }
