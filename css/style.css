@@ -23,7 +23,7 @@ a {
 }
 
 /* ====================
-   Header e Navegação
+   Header e Navegação (NÃO FIXO)
    ==================== */
 .header {
     background-color: #005f73;
@@ -72,8 +72,34 @@ a {
 }
 
 /* ====================
-   Home / Hero
+   Estilo do Botão Flutuante (FAB) 
    ==================== */
+#mobile-menu-fab {
+    display: none; /* Por padrão, esconde o botão em telas grandes (desktop) */
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    z-index: 1000; 
+    background-color: #0a9396; 
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#mobile-menu-fab:hover {
+    background-color: #005f73;
+}
+
+/* ====================
+   Restante dos Estilos...
+   ==================== */
+
 .hero {
     background-color: #94d2bd;
     color: #053742;
@@ -107,9 +133,6 @@ a {
     background-color: #005f73;
 }
 
-/* ====================
-   Features da Home
-   ==================== */
 .features {
     display: flex;
     justify-content: center;
@@ -134,18 +157,12 @@ a {
     color: #0a9396;
 }
 
-/* ====================
-   Conteúdo comum das páginas (Home, Cursos, Sobre, Contato)
-   ==================== */
 .content {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* ====================
-   Cursos (Estilos básicos)
-   ==================== */
 .curso {
     margin-bottom: 3rem;
 }
@@ -160,9 +177,6 @@ a {
     font-size: 1.1rem;
 }
 
-/* ====================
-   Formulários (Contato)
-   ==================== */
 form label {
     font-weight: 600;
 }
@@ -182,9 +196,6 @@ form textarea {
     resize: vertical;
 }
 
-/* ====================
-   Footer
-   ==================== */
 footer.footer {
     background-color: #005f73;
     color: white;
@@ -193,9 +204,6 @@ footer.footer {
     margin-top: auto;
 }
 
-/* ====================
-   Página Sobre - Estilos Específicos
-   ==================== */
 .sobre-header {
     background-color: #0a9396;
     color: white;
@@ -217,13 +225,11 @@ footer.footer {
     line-height: 1.7;
 }
 
-/* Conteúdo principal da página Sobre */
 .sobre-conteudo {
     margin-top: 2rem;
     margin-bottom: 4rem;
 }
 
-/* Texto introdutório */
 .sobre-intro p {
     font-size: 1.15rem;
     line-height: 1.8;
@@ -231,7 +237,6 @@ footer.footer {
     margin-bottom: 1rem;
 }
 
-/* Seção Quem Somos */
 .sobre-time {
     margin-top: 3rem;
 }
@@ -242,7 +247,6 @@ footer.footer {
     text-align: center;
 }
 
-/* Cards dos membros */
 .time-cards {
     display: flex;
     gap: 2rem;
@@ -284,7 +288,6 @@ footer.footer {
     color: #333;
 }
 
-/* Seção Objetivos */
 .sobre-objetivos {
     margin-top: 3rem;
     background: #e0f2f1;
@@ -313,16 +316,19 @@ footer.footer {
 }
 
 /* ====================
-   Responsividade (Empilhamento do menu no celular)
+   Responsividade (Regras Mobile)
    ==================== */
 @media (max-width: 768px) {
-    /* Permite que o logo e o menu se quebrem em linhas diferentes */
+    /* Mostra o botão FAB apenas em telas menores */
+    #mobile-menu-fab {
+        display: block; 
+    }
+    
     .nav {
         flex-wrap: wrap;
         align-items: center;
     }
 
-    /* Garante que o menu ocupe toda a largura (100%) quando a tela for pequena */
     .menu {
         flex-direction: column;
         width: 100%; 
@@ -330,7 +336,6 @@ footer.footer {
         padding-top: 10px; 
     }
     
-    /* Faz cada item do menu ocupar a largura toda, como um botão */
     .menu li {
         width: 100%;
         text-align: center;
