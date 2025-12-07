@@ -28,7 +28,7 @@ a {
 .header {
     background-color: #005f73;
     padding: 1rem 2rem;
-    /* CORREÇÃO APLICADA: O menu não é mais fixo e rola com a página */
+    /* CORREÇÃO APLICADA: position: static; garante que o menu role com a página. */
     position: static; 
     top: 0;
     z-index: 1000;
@@ -313,7 +313,7 @@ footer.footer {
 }
 
 /* ====================
-   Responsividade
+   Responsividade (Empilhamento do menu no celular)
    ==================== */
 @media (max-width: 768px) {
     /* Permite que o logo e o menu se quebrem em linhas diferentes */
