@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal de Informática - Cursos</title>
+  <link rel="stylesheet" href="css/cursos.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Portal Informática</a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="cursos.html" class="active">Cursos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Cursos de Informática</h1>
+    <p>Escolha abaixo entre cursos básicos, intermediários ou avançados para aprimorar suas habilidades digitais.</p>
+  </section>
+
+  <main class="content">
+    <div class="tabs">
+      <button class="tab-button active" onclick="showTab('basico')">Básico</button>
+      <button class="tab-button" onclick="showTab('intermediario')">Intermediário</button>
+      <button class="tab-button" onclick="showTab('avancado')">Avançado</button>
+    </div>
+
+    <div id="basico" class="tab-content active">
+      <ul class="course-list">
+        <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-basico" target="_blank">Microsoft Excel 2016 - Básico</a></li>
+        <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-basico" target="_blank">Microsoft Word 2016 - Básico</a></li>
+        <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-basico" target="_blank">Microsoft PowerPoint 2016 - Básico</a></li>
+        <li><a href="https://www.ev.org.br/cursos/inteligencia-artificial-e-o-novo-contexto-da-cultura-digital" target="_blank">Inteligência Artificial e o Novo Contexto da Cultura Digital</a></li>
+        <li><a href="https://www.ev.org.br/cursos/introducao-a-analise-de-dados-microsoft-power-bi" target="_blank">Introdução à Análise de Dados - Microsoft Power BI</a></li>
+
+
+
+
+      </ul>
+    </div>
+
+    <div id="intermediario" class="tab-content">
+      <ul class="course-list">
+        <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-intermediario" target="_blank">Microsoft Excel 2016 - Intermediário</a></li>
+        <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-intermediario" target="_blank">Microsoft Word 2016 - Intermediário</a></li>
+        <li><a href="https://www.ev.org.br/cursos/preparando-dados-para-analise-microsoft-power-bi" target="_blank">Preparando Dados para Análise - Microsoft Power BI</a></li>
+        <li><a href="https://www.ev.org.br/cursos/modelando-dados-no-power-bi" target="_blank">Modelando Dados no Power BI</a></li>
+
+
+
+
+
+      </ul>
+    </div>
+
+    <div id="avancado" class="tab-content">
+      <ul class="course-list">
+        <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-avancado" target="_blank">Microsoft Excel 2016 - Avançado</a></li>
+        <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-avancado" target="_blank">Microsoft Word 2016 - Avançado</a></li>
+        <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-avancado" target="_blank">Microsoft PowerPoint 2016 - Avançado</a></li>
+        <li><a href="https://www.ev.org.br/cursos/visualizando-dados-no-power-bi" target="_blank">Visualizando Dados no Power BI</a></li>
+        <li><a href="https://www.ev.org.br/cursos/analise-de-dados-no-power-bi" target="_blank">Análise de Dados no Power BI</a></li>
+
+
+
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Portal Informática. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
