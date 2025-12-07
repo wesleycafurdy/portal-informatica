@@ -22,7 +22,6 @@ a {
 .header {
   background-color: #005f73;
   padding: 1rem 2rem;
-  /* position: static; - Não é necessário adicionar aqui, pois não estava fixo. */
 }
 
 .nav {
@@ -143,36 +142,28 @@ a {
 }
 
 /* ====================
-   Responsividade
+   Responsividade (Empilhamento do menu e abas no celular)
    ==================== */
 @media (max-width: 768px) {
-    /* Permite que o logo e o menu se quebrem em linhas diferentes */
     .nav {
         flex-wrap: wrap; 
         align-items: center;
     }
-
-    /* Garante que o menu ocupe toda a largura (100%) quando a tela for pequena */
     .menu {
         flex-direction: column; 
         width: 100%; 
         gap: 0; 
         padding-top: 10px;
     }
-    
-    /* Faz cada item do menu ocupar a largura toda, como um botão */
     .menu li {
         width: 100%;
         text-align: center;
         margin-bottom: 5px; 
     }
-    
     .menu li a {
         display: block; 
         padding: 0.75rem; 
     }
-    
-    /* Faz os botões de aba se empilharem */
     .tabs {
         flex-direction: column;
     }
