@@ -36,12 +36,12 @@
                     <div class="time-membro">
                        
                         <h3>Wesley</h3>
-                        <p>desenvolvedor e parceiro no projeto, dedicado a criar ferramentas digitais para inclusão e aprendizado.</p>
+                        <p>Desenvolvedor e parceiro no projeto, dedicado a criar ferramentas digitais para inclusão e aprendizado.</p>
                     </div>
                     <div class="time-membro">
 
                         <h3>Wellington</h3>
-                        <p>idealizador e colaborador, comprometido em ajudar a comunidade com acesso a conteúdos gratuitos de informática..</p>
+                        <p>Idealizador e colaborador, comprometido em ajudar a comunidade com acesso a conteúdos gratuitos de informática.</p>
                     </div>
                 </div>
             </div>
@@ -56,9 +56,26 @@
             </div>
         </section>
     </main>
+    
+    <button id="mobile-menu-fab" aria-label="Mostrar Menu">☰</button>
 
     <footer class="footer">
         <p>© 2025 Portal de Informática. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fabButton = document.getElementById('mobile-menu-fab');
+            
+            if (fabButton) {
+                fabButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' 
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
