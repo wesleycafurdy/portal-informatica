@@ -1,54 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portal de Informática - Contato</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Portal Informática</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <a href="index.html" class="logo">Portal Informática</a>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="contato.html" class="active">Contato</a></li>
-            </ul>
-        </nav>
+
+    <header>
+        <h1>Contato</h1>
     </header>
 
-    <main class="content">
-        <h1>Contato</h1>
-        <p>Para dúvidas, sugestões ou parcerias, entre em contato pelo formulário abaixo:</p>
+    <main>
+        <h2>Fale Conosco</h2>
 
-        <!-- FORMULÁRIO 100% FUNCIONANDO -->
-        <form action="https://formsubmit.co/portalinformartica@gmail.com" method="POST">
+        <!-- FORMULÁRIO CORRETO -->
+        <form id="form-contato">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required><br><br>
 
-            <label for="nome">Nome:</label><br />
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required /><br /><br />
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required><br><br>
 
-            <label for="email">Email:</label><br />
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required /><br /><br />
-
-            <label for="mensagem">Mensagem:</label><br />
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui" required></textarea><br /><br />
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea><br><br>
 
             <button type="submit" class="btn">Enviar</button>
-
-            <!-- CONFIGURAÇÕES DO FORM SUBMIT -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Nova mensagem do Portal de Informática">
-            <input type="hidden" name="_template" value="table">
-
-            <!-- REDIRECIONAMENTO CORRETO -->
-            <input type="hidden" name="_next" value="https://wesleycafurdy.github.io/portal-informatica/obrigado.html">
         </form>
     </main>
 
-    <footer class="footer">
-        <p>© 2025 Portal de Informática - Projeto Comunitário</p>
-    </footer>
+    <!-- CHAMADA DO JAVASCRIPT DO FIREBASE -->
+    <script type="module" src="js/script.js"></script>
+
 </body>
 </html>
