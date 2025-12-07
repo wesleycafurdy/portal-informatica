@@ -4,11 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portal de Informática - Contato</title>
-    <link rel="stylesheet" href="css/style.css" />
+    
+    <link rel="stylesheet" href="css/style.css" /> 
+    
+    <style>
+        /* Centraliza o texto do HERO (o título "Fale Conosco") */
+        .hero {
+            text-align: center;
+            padding: 60px 20px; 
+        }
+
+        /* Centraliza o bloco do formulário na horizontal */
+        .form-section form {
+            /* Define uma largura máxima para que a centralização seja visível */
+            max-width: 600px; 
+            /* Esta linha centraliza o bloco na horizontal */
+            margin: 40px auto; 
+            padding: 20px;
+        }
+
+        /* Garante que labels ocupem a linha e ajusta o espaçamento */
+        .form-section label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        /* Ajusta os campos para ocuparem a largura total do formulário */
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px; 
+            box-sizing: border-box; /* Inclui padding na largura total */
+            display: block; /* Garante que ocupem a linha inteira */
+        }
+        
+        /* Ajusta o botão */
+        .form-section .btn {
+            display: block;
+            width: 100%; 
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+    
     <script defer src="js/firebase.js"></script>
 </head>
 <body>
-    <!-- HEADER IGUAL -->
+    
     <header class="header">
         <nav class="nav">
             <a href="index.html" class="logo">Portal Informática</a>
@@ -16,55 +62,35 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="contato.html" class="active">Contato</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li> 
             </ul>
         </nav>
     </header>
 
-    <!-- HERO IGUAL AO DE CURSOS -->
-    <section class="hero">
-        <h1>Fale Conosco</h1>
-        <p>Envie sua dúvida, sugestão ou proposta de parceria.</p>
-    </section>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Portal Informática</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <header>
-        <h1>Contato</h1>
-    </header>
-
     <main>
-        <h2>Fale Conosco</h2>
+        <section class="hero">
+            <h1>Fale Conosco</h1>
+            <p>Envie sua dúvida, sugestão ou proposta de parceria.</p>
+        </section>
 
-        <!-- FORMULÁRIO CORRETO -->
-        <form id="form-contato">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required><br><br>
+        <section class="form-section">
+            <form id="form-contato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
 
-            <label for="mensagem">Mensagem:</label><br>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea><br><br>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
 
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+
+        <script type="module" src="js/script.js"></script>
     </main>
 
-    <!-- CHAMADA DO JAVASCRIPT DO FIREBASE -->
-    <script type="module" src="js/script.js"></script>
-
-    </main>
-
-    <!-- FOOTER IGUAL -->
     <footer class="footer">
         <p>© 2025 Portal de Informática - Projeto Comunitário</p>
     </footer>
