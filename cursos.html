@@ -33,15 +33,11 @@
 
     <div id="basico" class="tab-content active">
       <ul class="course-list">
+        <li><a href="https://www.ev.org.br/cursos/introducao-a-informatica-basica" target="_blank">Introdução à Informática Básica</a></li>
         <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-basico" target="_blank">Microsoft Excel 2016 - Básico</a></li>
         <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-basico" target="_blank">Microsoft Word 2016 - Básico</a></li>
         <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-basico" target="_blank">Microsoft PowerPoint 2016 - Básico</a></li>
-        <li><a href="https://www.ev.org.br/cursos/inteligencia-artificial-e-o-novo-contexto-da-cultura-digital" target="_blank">Inteligência Artificial e o Novo Contexto da Cultura Digital</a></li>
-        <li><a href="https://www.ev.org.br/cursos/introducao-a-analise-de-dados-microsoft-power-bi" target="_blank">Introdução à Análise de Dados - Microsoft Power BI</a></li>
-
-
-
-
+        <li><a href="https://www.ev.org.br/cursos/internet-basica" target="_blank">Internet Básica</a></li>
       </ul>
     </div>
 
@@ -49,13 +45,9 @@
       <ul class="course-list">
         <li><a href="https://www.ev.org.br/cursos/microsoft-excel-2016-intermediario" target="_blank">Microsoft Excel 2016 - Intermediário</a></li>
         <li><a href="https://www.ev.org.br/cursos/microsoft-word-2016-intermediario" target="_blank">Microsoft Word 2016 - Intermediário</a></li>
-        <li><a href="https://www.ev.org.br/cursos/preparando-dados-para-analise-microsoft-power-bi" target="_blank">Preparando Dados para Análise - Microsoft Power BI</a></li>
+        <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-intermediario" target="_blank">Microsoft PowerPoint 2016 - Intermediário</a></li>
+        <li><a href="https://www.ev.org.br/cursos/introducao-ao-power-bi" target="_blank">Introdução ao Power BI</a></li>
         <li><a href="https://www.ev.org.br/cursos/modelando-dados-no-power-bi" target="_blank">Modelando Dados no Power BI</a></li>
-
-
-
-
-
       </ul>
     </div>
 
@@ -66,12 +58,11 @@
         <li><a href="https://www.ev.org.br/cursos/microsoft-powerpoint-2016-avancado" target="_blank">Microsoft PowerPoint 2016 - Avançado</a></li>
         <li><a href="https://www.ev.org.br/cursos/visualizando-dados-no-power-bi" target="_blank">Visualizando Dados no Power BI</a></li>
         <li><a href="https://www.ev.org.br/cursos/analise-de-dados-no-power-bi" target="_blank">Análise de Dados no Power BI</a></li>
-
-
-
       </ul>
     </div>
   </main>
+
+  <button id="mobile-menu-fab" aria-label="Mostrar Menu">☰</button>
 
   <footer class="footer">
     <p>&copy; 2025 Portal Informática. Todos os direitos reservados.</p>
@@ -82,12 +73,28 @@
       document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.remove('active');
       });
+      document.getElementById(tabId).classList.add('active');
+
       document.querySelectorAll('.tab-button').forEach(btn => {
         btn.classList.remove('active');
       });
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      event.currentTarget.classList.add('active');
     }
+    
+    // Script JavaScript para fazer o FAB rolar a página para o topo
+    document.addEventListener('DOMContentLoaded', function() {
+        const fabButton = document.getElementById('mobile-menu-fab');
+        
+        if (fabButton) {
+            fabButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' 
+                });
+            });
+        }
+    });
+
   </script>
 </body>
 </html>
