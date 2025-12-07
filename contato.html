@@ -80,8 +80,25 @@
         <script type="module" src="js/script.js"></script>
     </main>
 
+    <button id="mobile-menu-fab" aria-label="Mostrar Menu">☰</button>
+
     <footer class="footer">
         <p>© 2025 Portal de Informática - Projeto Comunitário</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fabButton = document.getElementById('mobile-menu-fab');
+            
+            if (fabButton) {
+                fabButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' 
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
