@@ -40,8 +40,26 @@
         </div>
     </section>
 
+    <button id="mobile-menu-fab" aria-label="Mostrar Menu">☰</button>
+
     <footer class="footer">
         <p>© 2025 Portal de Informática - Projeto Comunitário</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fabButton = document.getElementById('mobile-menu-fab');
+            
+            if (fabButton) {
+                fabButton.addEventListener('click', function() {
+                    // Rola a página suavemente de volta para o topo (onde o menu principal está)
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' 
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
